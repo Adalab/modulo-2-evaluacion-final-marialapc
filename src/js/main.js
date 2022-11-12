@@ -7,13 +7,12 @@ const listCharacters = document.querySelector(".js-characters-list");
 let characters = [];
 const searchBar = document.querySelector(".js-search-bar");
 
-
 //functions
 
-function renderCharacters() {
+function renderCharacters(charactersList) {
   let html = "";
 
-  for (const oneCharacter of characters) {
+  for (const oneCharacter of charactersList) {
     html += `<li class="item"><article class="character">`;
     html += `<img class="character__image"src="${oneCharacter.img}">`;
     html += `<h2 class="character__name">${oneCharacter.name}</h2>`;
@@ -28,23 +27,21 @@ function getData() {
     .then((response) => response.json())
     .then((data) => {
       characters = data;
-      console.log(characters);
-      renderCharacters();
+      renderCharacters(characters);
     });
 }
 
 getData();
 
-function handleKeyup(){
+function handleKeyup() {
   const searchValue = searchBar.value.toLowerCase();
 
-const characterFilter = characters.filter((character) => character.name.toLowerCase().includes(searchValue)
-);
-console.log(characterFilter);
-};
+  const characterFilter = characters.filter((character) =>
+    character.name.toLowerCase().includes(searchValue)
+  );
+  renderCharacters(characterFilter);
+}
 
 //Events
 
-searchBar.addEventListener("keyup",handleKeyup);
-
-
+searchBar.addEventListener("keyup", handleKeyup);

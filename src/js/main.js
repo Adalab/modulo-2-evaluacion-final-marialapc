@@ -2,8 +2,13 @@
 
 "use strict";
 
+//variables
 const listCharacters = document.querySelector(".js-characters-list");
 let characters = [];
+const searchBar = document.querySelector(".js-search-bar");
+
+
+//functions
 
 function renderCharacters() {
   let html = "";
@@ -29,3 +34,17 @@ function getData() {
 }
 
 getData();
+
+function handleKeyup(){
+  const searchValue = searchBar.value.toLowerCase();
+
+const characterFilter = characters.filter((character) => character.name.toLowerCase().includes(searchValue)
+);
+console.log(characterFilter);
+};
+
+//Events
+
+searchBar.addEventListener("keyup",handleKeyup);
+
+

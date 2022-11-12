@@ -9,7 +9,7 @@ let characters = [];
 const searchBtn = document.querySelector(".js-search-btn");
 const searchBar = document.querySelector (".js-search-bar");
 
-let favorites =[];
+let favorites = [];
 
 
 
@@ -40,7 +40,7 @@ function getData() {
 
 getData();
 
-function handleClick(event) {
+function handleClickbtn(event) {
   event.preventDefault();
   const searchValue = searchBar.value.toLowerCase();
 
@@ -50,12 +50,16 @@ function handleClick(event) {
   renderCharacters(characterFilter);
 }
 
+function handleClickfav(event){
+console.log(event.currentTarget);
+};
+
 function favoriteCharacters(){
   const charactersLi = document.querySelectorAll('.js-character');
   for (const li of charactersLi){
-    li.addEventListener('click', () => console.log('click li'));
+    li.addEventListener('click', handleClickfav);
   }
 }
 //Events
 
-searchBtn.addEventListener("click", handleClick);
+searchBtn.addEventListener("click", handleClickbtn);

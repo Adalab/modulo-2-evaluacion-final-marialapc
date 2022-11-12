@@ -5,7 +5,9 @@
 //variables
 const listCharacters = document.querySelector(".js-characters-list");
 let characters = [];
-const searchBar = document.querySelector(".js-search-bar");
+const searchBtn = document.querySelector(".js-search-btn");
+const searchBar = document.querySelector (".js-search-bar");
+
 
 //functions
 
@@ -33,15 +35,17 @@ function getData() {
 
 getData();
 
-function handleKeyup() {
+function handleClick(event) {
+  event.preventDefault();
   const searchValue = searchBar.value.toLowerCase();
 
   const characterFilter = characters.filter((character) =>
     character.name.toLowerCase().includes(searchValue)
   );
   renderCharacters(characterFilter);
+  console.log(renderCharacters(characterFilter));
 }
 
 //Events
 
-searchBar.addEventListener("keyup", handleKeyup);
+searchBtn.addEventListener("click", handleClick);

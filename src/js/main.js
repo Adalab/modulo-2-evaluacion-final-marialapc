@@ -50,9 +50,9 @@ function handleClickbtn(event) {
   renderCharacters(characterFilter);
 }
 
-function handleClickfav(event){
+function handleClickfav(){
 console.log(event.currentTarget);
-};
+}
 
 function favoriteCharacters(){
   const charactersLi = document.querySelectorAll('.js-character');

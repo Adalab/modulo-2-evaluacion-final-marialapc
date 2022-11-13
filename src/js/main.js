@@ -51,6 +51,7 @@ function handleClickbtn(event) {
 }
 
 function handleClickfav(event) {
+  event.currentTarget.classList.toggle('fav');
   const selectedCharacter = parseInt(event.currentTarget.id);
   const foundCharacter = characters.find (
     function (character){ 

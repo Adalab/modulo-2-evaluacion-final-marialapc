@@ -19,7 +19,7 @@ function renderCharacters(charactersList) {
   let html = "";
 
   for (const oneCharacter of charactersList) {
-    html += `<li class="item js-character"> <article class="character">`;
+    html += `<li class="item js-character" id="${oneCharacter.char_id}> <article class="character">`;
     html += `<img class="character__image"src="${oneCharacter.img}">`;
     html += `<h2 class="character__name">${oneCharacter.name}</h2>`;
     html += `<p class="character__dead">${oneCharacter.status}</p>`;
@@ -50,8 +50,8 @@ function handleClickbtn(event) {
   renderCharacters(characterFilter);
 }
 
-function handleClickfav(){
-console.log(event.currentTarget);
+function handleClickfav(event){
+console.log(event.currentTarget.char_id);
 }
 
 function favoriteCharacters(){

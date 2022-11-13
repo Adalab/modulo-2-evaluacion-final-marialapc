@@ -7,11 +7,9 @@ const listCharacters = document.querySelector(".js-characters-list");
 let characters = [];
 
 const searchBtn = document.querySelector(".js-search-btn");
-const searchBar = document.querySelector (".js-search-bar");
+const searchBar = document.querySelector(".js-search-bar");
 
 let favorites = [];
-
-
 
 //functions
 
@@ -19,7 +17,7 @@ function renderCharacters(charactersList) {
   let html = "";
 
   for (const oneCharacter of charactersList) {
-    html += `<li class="item js-character" id="${oneCharacter.char_id}> <article class="character">`;
+    html += `<li class="item js-character" id="(${oneCharacter.char_id}> <article class="character">`;
     html += `<img class="character__image"src="${oneCharacter.img}">`;
     html += `<h2 class="character__name">${oneCharacter.name}</h2>`;
     html += `<p class="character__dead">${oneCharacter.status}</p>`;
@@ -50,14 +48,18 @@ function handleClickbtn(event) {
   renderCharacters(characterFilter);
 }
 
-function handleClickfav(event){
-console.log(event.currentTarget.char_id);
+function handleClickfav(event) {
+  const selectedCharacter = event.currentTarget.character;
+  const characterFound = characters.find((character) => character.id === selectedCharacter);
+  console.log (characterFound);
+  favorites.push(characterFound);
+  console.log(favorites);
 }
 
-function favoriteCharacters(){
-  const charactersLi = document.querySelectorAll('.js-character');
-  for (const li of charactersLi){
-    li.addEventListener('click', handleClickfav);
+function favoriteCharacters() {
+  const charactersLi = document.querySelectorAll(".js-character");
+  for (const li of charactersLi) {
+    li.addEventListener("click", handleClickfav);
   }
 }
 //Events

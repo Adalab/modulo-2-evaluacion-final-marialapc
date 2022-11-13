@@ -10,6 +10,7 @@ const searchBtn = document.querySelector(".js-search-btn");
 const searchBar = document.querySelector(".js-search-bar");
 
 let favourites = [];
+const listFavCharacters = document.querySelector(".js-favorite-characters");
 
 //functions
 
@@ -17,6 +18,7 @@ function renderCharacters(charactersList) {
   let html = "";
 
   for (const oneCharacter of charactersList) {
+
     html += `<li class="item js-character" id="${oneCharacter.char_id}"> <article class="character">`;
     html += `<img class="character__image"src="${oneCharacter.img}">`;
     html += `<h2 class="character__name">${oneCharacter.name}</h2>`;
@@ -50,8 +52,14 @@ function handleClickbtn(event) {
 
 function handleClickfav(event) {
   const selectedCharacter = parseInt(event.currentTarget.id);
-  const foundCharacter = characters.find((character) => character.char_id === selectedCharacter);
-  const favouriteFound = favourites.findIndex((favourite) => favourite.id === selectedCharacter);
+  const foundCharacter = characters.find (
+    function (character){ 
+      return character.char_id === selectedCharacter;
+    }
+  );
+  const favouriteFound = favourites.findIndex(
+    (favourite) => favourite.char_id === selectedCharacter
+  );
 
   if (favouriteFound === -1) {
     favourites.push(foundCharacter);
@@ -60,7 +68,6 @@ function handleClickfav(event) {
   }
 
   console.log(favourites);
-  renderFavouriteCharacter();
 }
 
 function favouriteCharacters() {

@@ -10,7 +10,7 @@ const searchBtn = document.querySelector(".js-search-btn");
 const searchBar = document.querySelector(".js-search-bar");
 
 let favourites = [];
-const listFavCharacters = document.querySelector(".js-favorite-characters");
+const listFavCharacters = document.querySelector(".js-favourite-characters");
 
 //functions
 
@@ -27,6 +27,21 @@ function renderCharacters(charactersList) {
   }
   listCharacters.innerHTML = html;
   favouriteCharacters();
+}
+
+function renderFavCharacters(charactersFavList){
+  let html = "";
+  for (const character of charactersFavList) {
+
+    html += `<li class="item js-character" id="${character.char_id}"> <article class="character">`;
+    html += `<img class="character__image"src="${character.img}">`;
+    html += `<h2 class="character__name">${character.name}</h2>`;
+    html += `<p class="character__dead">${character.status}</p>`;
+    html += `</article> </li>`;
+  }
+  listFavCharacters.innerHTML = html;
+  favouriteCharacters();
+
 }
 
 function getData() {
@@ -67,6 +82,7 @@ function handleClickfav(event) {
   } else {
     favourites.splice(favouriteFound, 1);
   }
+  renderFavCharacters(characters);
 
   console.log(favourites);
 }

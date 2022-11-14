@@ -1,43 +1,110 @@
-@import 'core/variables';
-@import 'core/reset';
+@import "core/variables";
+@import "core/reset";
+  
 
 
-.main{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  width: 100vw;
+ background-image: url(../images/wp9643742.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.characters-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
 }
-.search-bar{
-    margin-top: 100px;
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:8px;
+
+
 }
 
-.list{
-    display: flex;
-    flex-direction:row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
 .item{
-    list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100px;
+  background-color: rgb(255, 181, 185);
   
 }
 
-.character{
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    &__image{
-    width: 200px;
-    height: 300px;
+.title{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
-};
+.character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 
-.fav{
-    background-color: red;
+  &__image {
+ width: 100px;
+ height: 125px;
+  }
+  &__name{
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  &__dead{
+    font-size: 11px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 6px;
+   
+  }
+}
+
+.fav {
+  background-color: rgb(234, 35, 85);
+}
+
+.favorites-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+.favorite-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap:8px;
+}
+
+.title-fav{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
 }

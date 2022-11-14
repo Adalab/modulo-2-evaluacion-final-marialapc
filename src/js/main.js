@@ -17,9 +17,19 @@ const listFavCharacters = document.querySelector(".js-favourite-characters");
 function renderCharacters(charactersList) {
   //paint the characters from the Api
   let html = "";
+  let favClass = "";
 
   for (const oneCharacter of charactersList) {
-    html += `<li class="item js-character" id="${oneCharacter.char_id}"> <article class="character">`;
+    const favouriteFound = favourites.findIndex(
+      (favourite) => favourite.char_id === oneCharacter.char_id
+    );
+    if (favouriteFound === -1) {
+      favClass = "";
+    } else {
+      favClass = "fav";
+    }
+
+    html += `<li class="item js-character ${favClass} " id="${oneCharacter.char_id}"> <article class="character">`;
     html += `<img class="character__image"src="${oneCharacter.img}">`;
     html += `<h2 class="character__name">${oneCharacter.name}</h2>`;
     html += `<p class="character__dead">${oneCharacter.status}</p>`;

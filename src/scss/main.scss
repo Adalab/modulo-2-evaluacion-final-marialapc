@@ -7,26 +7,57 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content:space-between;
   height: 350px;
   width: 100vw;
  background-image: url(../images/wp9643742.jpg);
   background-position: center;
-  background-size: cover;
+  background-size:auto;
+  &__title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 250px;
+    margin-right: 100px;
+    color: white;
+    font-size: 40px;
+    margin-left: 35px;
+    
+  }
+  &__bar{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 350px;
+    height: 27px;
+    border: 2px solid rgb(234, 35, 85);
+    margin-top: 250px;
+    margin-left: 600px;
+  }
+  &__btn{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    margin-top: 250px;
+    margin-right: 100px;
+    
+
+  }
 }
 
 .main {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+ display: grid;
+ grid-template-columns: 900px 300px;
+ gap: 80px;
+ width: 100vw;
+ background-color: black;
 }
 
 .characters-div{
+margin-left: 150px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 
 }
 
@@ -45,8 +76,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  justify-content:center;
   width: 100px;
   background-color: rgb(255, 181, 185);
   
@@ -54,7 +84,8 @@
 
 .title{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 20px;
+  color:rgb(234, 35, 85) ;
+  font-size: 30px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -85,10 +116,13 @@
 }
 
 .favorites-div{
+  margin-left: 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+align-items: center;
+  
+
+
   
 
 }
@@ -97,13 +131,16 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap:8px;
+  
+
+  gap:20px;
+  border: 3px solid rgb(234, 35, 85);
 }
 
 .title-fav{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 20px;
+  color:rgb(234, 35, 85) ;
+  font-size: 25px;
   margin-bottom: 20px;
   margin-top: 20px;
 

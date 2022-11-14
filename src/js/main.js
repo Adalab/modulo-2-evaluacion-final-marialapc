@@ -40,7 +40,6 @@ function renderFavCharacters(favourites){ //paint the favorite characters
     html += `</article> </li>`;
   }
   listFavCharacters.innerHTML = html;
-  favouriteCharacters();
 }
 
 function getData() { // get data from the Api
@@ -64,7 +63,7 @@ function handleClickbtn(event) { //filter for searching a character
   renderCharacters(characterFilter);
 }
 
-function handleClickfav(event) { // make the clicked character a favortite character and add it to the array
+function handleClickfav(event) { // make the clicked character a favortite character and add it to the array, paint or delete from the section
   event.currentTarget.classList.toggle('fav');
   const selectedCharacter = parseInt(event.currentTarget.id);
   const foundCharacter = characters.find (
@@ -83,7 +82,6 @@ function handleClickfav(event) { // make the clicked character a favortite chara
     favourites.splice(favouriteFound, 1);
     renderFavCharacters(favourites);
   }
- 
 
   console.log(favourites);
 }

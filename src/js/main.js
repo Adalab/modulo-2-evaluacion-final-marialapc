@@ -29,19 +29,18 @@ function renderCharacters(charactersList) { //paint the characters from the Api
   favouriteCharacters();
 }
 
-function renderFavCharacters(charactersFavList){ //paint the favorite characters
+function renderFavCharacters(favourites){ //paint the favorite characters
   let html = "";
-  for (const character of charactersFavList) {
+  for (const favouriteFound  of favourites) {
 
-    html += `<li class="item js-character" id="${character.char_id}"> <article class="character">`;
-    html += `<img class="character__image"src="${character.img}">`;
-    html += `<h2 class="character__name">${character.name}</h2>`;
-    html += `<p class="character__dead">${character.status}</p>`;
+    html += `<li class="item js-character" id="${favouriteFound.char_id}"> <article class="character">`;
+    html += `<img class="character__image"src="${favouriteFound.img}">`;
+    html += `<h2 class="character__name">${favouriteFound.name}</h2>`;
+    html += `<p class="character__dead">${favouriteFound.status}</p>`;
     html += `</article> </li>`;
   }
   listFavCharacters.innerHTML = html;
   favouriteCharacters();
-
 }
 
 function getData() { // get data from the Api
@@ -79,10 +78,12 @@ function handleClickfav(event) { // make the clicked character a favortite chara
 
   if (favouriteFound === -1) {
     favourites.push(foundCharacter);
+    renderFavCharacters(favourites);
   } else {
     favourites.splice(favouriteFound, 1);
+    renderFavCharacters(favourites);
   }
-  renderFavCharacters(characters);
+ 
 
   console.log(favourites);
 }

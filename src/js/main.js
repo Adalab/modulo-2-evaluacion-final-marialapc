@@ -14,7 +14,7 @@ const listFavCharacters = document.querySelector(".js-favourite-characters");
 
 //functions
 
-function renderCharacters(charactersList) {
+function renderCharacters(charactersList) { //paint the characters from the Api
   let html = "";
 
   for (const oneCharacter of charactersList) {
@@ -29,7 +29,7 @@ function renderCharacters(charactersList) {
   favouriteCharacters();
 }
 
-function renderFavCharacters(charactersFavList){
+function renderFavCharacters(charactersFavList){ //paint the favorite characters
   let html = "";
   for (const character of charactersFavList) {
 
@@ -44,7 +44,7 @@ function renderFavCharacters(charactersFavList){
 
 }
 
-function getData() {
+function getData() { // get data from the Api
   fetch("https://breakingbadapi.com/api/characters")
     .then((response) => response.json())
     .then((data) => {
@@ -55,7 +55,7 @@ function getData() {
 
 getData();
 
-function handleClickbtn(event) {
+function handleClickbtn(event) { //filter for searching a character
   event.preventDefault();
   const searchValue = searchBar.value.toLowerCase();
 
@@ -65,7 +65,7 @@ function handleClickbtn(event) {
   renderCharacters(characterFilter);
 }
 
-function handleClickfav(event) {
+function handleClickfav(event) { // make the clicked character a favortite character and add it to the array
   event.currentTarget.classList.toggle('fav');
   const selectedCharacter = parseInt(event.currentTarget.id);
   const foundCharacter = characters.find (
@@ -87,7 +87,7 @@ function handleClickfav(event) {
   console.log(favourites);
 }
 
-function favouriteCharacters() {
+function favouriteCharacters() {  //click on a character
   const charactersLi = document.querySelectorAll(".js-character");
   for (const li of charactersLi) {
     li.addEventListener("click", handleClickfav);
@@ -95,4 +95,4 @@ function favouriteCharacters() {
 }
 //Events
 
-searchBtn.addEventListener("click", handleClickbtn);
+searchBtn.addEventListener("click", handleClickbtn); // click on search button

@@ -1,6 +1,6 @@
-#  Módulo 2 - Evaluación Final
+#  Evaluación Final - Módulo 2
 
-Ejercicio de la evaluación final del módulo de Javascript
+Ejercicio de la evaluación final del módulo de Javascript del bootcamp de Adalab
 
 ## ¿Qué encontrarás en este repo? 🚀
 

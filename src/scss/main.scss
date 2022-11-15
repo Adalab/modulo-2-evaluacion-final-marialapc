@@ -151,8 +151,34 @@ align-items: center;
 .title-fav{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color:rgb(234, 35, 85) ;
-  font-size: 25px;
+  font-size: 30px;
   margin-bottom: 20px;
   margin-top: 20px;
+  margin-left: 20px;
 
+}
+
+.resetbtn{ 
+   color: white;
+  background-color: rgb(143, 142, 142);
+  border-radius: 5px;
+  height: 3px;
+  height: 23px;
+  width: 60px;
+  margin-top: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor: pointer;
+  margin-left:18px
+}
+
+.resetbtn:hover {
+  color: white;
+ background-color:rgb(234, 35, 85);
+  transition: width 0.6s;
+  cursor: pointer;
+}
+
+
+.fav-and-reset{
+  display: flex;
 }

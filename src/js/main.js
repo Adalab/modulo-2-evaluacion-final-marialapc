@@ -12,6 +12,8 @@ const searchBar = document.querySelector(".js-search-bar");
 let favourites = [];
 const listFavCharacters = document.querySelector(".js-favourite-characters");
 
+const resetBtn = document.querySelector(".js-reset-btn");
+
 //functions
 
 function renderCharacters(charactersList) {
@@ -115,6 +117,15 @@ function favouriteCharacters() {
     li.addEventListener("click", handleClickfav);
   }
 }
+
+
 //Events
 
 searchBtn.addEventListener("click", handleClickbtn); // click on search button
+
+resetBtn.addEventListener("click",(ev) =>{ //click on reset button
+  ev.preventDefault();
+  console.log("reset click");
+listFavCharacters.innerHTML = '';
+favClass = "";
+});

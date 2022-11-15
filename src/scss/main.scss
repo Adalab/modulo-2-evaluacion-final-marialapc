@@ -9,30 +9,30 @@
   align-items: center;
   justify-content:space-between;
   height: 350px;
-  width: 100vw;
+  width: 100%;
  background-image: url(../images/wp9643742.jpg);
   background-position: center;
   background-size:auto;
   &__title{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: $font-franklin;
     margin-top: 250px;
     margin-right: 100px;
-    color: white;
+    color: $color-white;
     font-style: bold;
     font-size: 40px;
     margin-left: 35px;
     
   }
   &__bar{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: $font-franklin;
     width: 350px;
     height: 27px;
-    border: 2px solid rgb(234, 35, 85);
+    border: 2px solid $color-salmon;
     margin-top: 250px;
     margin-left: 600px;
   }
   &__btn{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: $font-franklin;
     height: 30px;
     width: 100px;
     border-radius: 5px;
@@ -42,8 +42,8 @@
 
   }
   &__btn:hover {
-    color: white;
-   background-color:rgb(234, 35, 85);
+    color: $color-white;
+   background-color:$color-salmon;
     transition: width 0.6s;
     cursor: pointer;
   }
@@ -55,7 +55,7 @@
  grid-template-columns: 900px 300px;
  gap: 80px;
  width: 100vw;
- background-color: black;
+ background-color: $color-black;
 }
 
 .characters-div{
@@ -87,15 +87,15 @@ margin-left: 150px;
   align-items: center;
   justify-content:center;
   width: 100px;
-  background-color: rgb(255, 181, 185);
+  background-color: $color-pink;
   cursor: pointer;
  
   
 }
 
 .title{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color:rgb(234, 35, 85) ;
+  font-family: $font-franklin;
+  color:$color-salmon;
   font-size: 30px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -112,18 +112,18 @@ margin-left: 150px;
   }
   &__name{
     font-size: 14px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: $font-franklin;
   }
   &__dead{
     font-size: 11px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: $font-franklin;
     margin-bottom: 6px;
    
   }
 }
 
 .fav {
-  background-color: rgb(234, 35, 85);
+  background-color: $color-salmon;
 }
 
 .favorites-div{
@@ -145,12 +145,12 @@ align-items: center;
   
 
   gap:20px;
-  border: 3px solid rgb(234, 35, 85);
+  border: 3px solid $color-salmon;
 }
 
 .title-fav{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color:rgb(234, 35, 85) ;
+  font-family: $font-franklin;
+  color: $color-salmon;
   font-size: 30px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -159,21 +159,21 @@ align-items: center;
 }
 
 .resetbtn{ 
-   color: white;
-  background-color: rgb(143, 142, 142);
+   color: $color-white;
+  background-color: $color-grey;
   border-radius: 5px;
   height: 3px;
   height: 23px;
   width: 60px;
   margin-top: 25px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: $font-franklin;
   cursor: pointer;
   margin-left:18px
 }
 
 .resetbtn:hover {
-  color: white;
- background-color:rgb(234, 35, 85);
+  color: $color-white;
+ background-color: $color-salmon;
   transition: width 0.6s;
   cursor: pointer;
 }
@@ -182,3 +182,4 @@ align-items: center;
 .fav-and-reset{
   display: flex;
 }
+

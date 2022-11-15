@@ -16,8 +16,7 @@ const resetBtn = document.querySelector(".js-reset-btn");
 
 //functions
 
-function renderCharacters(charactersList) {
-  //paint the characters from the Api
+function renderCharacters(charactersList) {//paint the characters from the Api, paint them with the fav class or not
   let html = "";
   let favClass = "";
 
@@ -41,8 +40,7 @@ function renderCharacters(charactersList) {
   favouriteCharacters();
 }
 
-function renderFavCharacters(favourites) {
-  //paint the favorite characters
+function renderFavCharacters(favourites) { //paint the favorite characters
   let html = "";
   for (const favouriteFound of favourites) {
     html += `<li class="item js-character" id="${favouriteFound.char_id}"> <article class="character">`;
@@ -125,7 +123,8 @@ searchBtn.addEventListener("click", handleClickbtn); // click on search button
 resetBtn.addEventListener("click", (ev) => {
   //click on reset button
   ev.preventDefault();
-  console.log("reset click");
   listFavCharacters.innerHTML = "";
   localStorage.clear();
+  favourites.length = 0;
+  renderCharacters(characters);
 });

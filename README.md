@@ -4,11 +4,11 @@ Ejercicio de la evaluación final del módulo de Javascript
 
 ## ¿Qué encontrarás en este repo? 🚀
 
-Album de personajes de la serie Breaking bad
+Album de personajes de la serie Breaking Bad
 
 ## ¿Cómo funciona? ⚙️
 
-Busca en la barra de navegación tu personaje favorito de breaking bad. 
+Busca en la barra de navegación tu personaje favorito de la serie Breaking Bad. 
 Al clicar sobre él, se añadirá a la sección de favoritos.
 
 ## Construido con 🛠️

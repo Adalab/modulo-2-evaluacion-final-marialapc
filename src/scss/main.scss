@@ -1,73 +1,61 @@
 @import "core/variables";
 @import "core/reset";
-  
 
-
-.header{
+.header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   height: 350px;
   width: 100%;
- background-image: url(../images/wp9643742.jpg);
+  background-image: url(../images/wp9643742.jpg);
   background-position: center;
-  background-size:auto;
-  &__title{
-    font-family: $font-franklin;
-    margin-top: 250px;
-    margin-right: 100px;
-    color: $color-white;
-    font-style: bold;
-    font-size: 40px;
-    margin-left: 35px;
-    
+  background-size: cover;
+  gap: 5px;
+
+  &__title {
+    display: none;
   }
-  &__bar{
+
+  &__bar {
     font-family: $font-franklin;
-    width: 350px;
-    height: 27px;
+    width: 500px;
+    height: 11px;
     border: 2px solid $color-salmon;
     margin-top: 250px;
-    margin-left: 600px;
+    margin-left: 65px;
   }
-  &__btn{
+  &__btn {
     font-family: $font-franklin;
-    height: 30px;
-    width: 100px;
+    height: 20px;
+    width: 90px;
     border-radius: 5px;
     margin-top: 250px;
     margin-right: 100px;
     cursor: pointer;
-
   }
   &__btn:hover {
     color: $color-white;
-   background-color:$color-salmon;
+    background-color: $color-salmon;
     transition: width 0.6s;
     cursor: pointer;
   }
-  
 }
 
 .main {
- display: grid;
- grid-template-columns: 900px 300px;
- gap: 80px;
- width: 100vw;
- background-color: $color-black;
+  display: grid;
+  grid-template-columns: 100px 20px;
+  gap: 70px;
+  width: 100vw;
+  background-color: $color-black;
 }
 
-.characters-div{
-margin-left: 150px;
-
+.characters-div {
+  margin-left: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
- 
-
-
 }
 
 .list {
@@ -76,27 +64,23 @@ margin-left: 150px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap:8px;
-
-
+  gap: 8px;
 }
 
-.item{
+.item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:center;
-  width: 100px;
+  justify-content: center;
+  width: 50px;
   background-color: $color-pink;
   cursor: pointer;
- 
-  
 }
 
-.title{
+.title {
   font-family: $font-franklin;
-  color:$color-salmon;
-  font-size: 30px;
+  color: $color-salmon;
+  font-size: 18px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -104,21 +88,20 @@ margin-left: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 3px;
 
   &__image {
- width: 100px;
- height: 125px;
+    width: 50px;
+    height: 67px;
   }
-  &__name{
-    font-size: 14px;
+  &__name {
+    font-size: 8px;
     font-family: $font-franklin;
   }
-  &__dead{
-    font-size: 11px;
+  &__dead {
+    font-size: 6px;
     font-family: $font-franklin;
-    margin-bottom: 6px;
-   
+    margin-bottom: 2.5px;
   }
 }
 
@@ -126,60 +109,124 @@ margin-left: 150px;
   background-color: $color-salmon;
 }
 
-.favorites-div{
+.favorites-div {
   margin-left: 50px;
   display: flex;
   flex-direction: column;
-align-items: center;
-  
-
-
-  
-
+  align-items: center;
 }
 .favorite-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  
 
-  gap:20px;
+  gap: 20px;
   border: 3px solid $color-salmon;
 }
 
-.title-fav{
+.title-fav {
   font-family: $font-franklin;
   color: $color-salmon;
-  font-size: 30px;
+  font-size: 16px;
   margin-bottom: 20px;
   margin-top: 20px;
   margin-left: 20px;
-
 }
 
-.resetbtn{ 
-   color: $color-white;
+.resetbtn {
+  color: $color-white;
   background-color: $color-grey;
+  font-size: 8px;
   border-radius: 5px;
-  height: 3px;
-  height: 23px;
-  width: 60px;
-  margin-top: 25px;
+  height: 17px;
+  width: 35px;
+  margin-top: 20px;
   font-family: $font-franklin;
   cursor: pointer;
-  margin-left:18px
+  margin-left: 10px;
 }
 
 .resetbtn:hover {
   color: $color-white;
- background-color: $color-salmon;
+  background-color: $color-salmon;
   transition: width 0.6s;
   cursor: pointer;
 }
 
-
-.fav-and-reset{
+.fav-and-reset {
   display: flex;
 }
+////////////////////////////////////////////////////////////////////////////////////
+@media all and (min-width: 1200px) {
+  .header {
+    background-size: auto;
 
+     &__title {
+      display: flex;
+       font-family: $font-franklin;
+       margin-top: 250px;
+       margin-right: 100px;
+       color: $color-white;
+      font-style: bold;
+       font-size: 40px;
+      margin-left: 60px;
+      
+    }
+    &__bar {
+      width: 350px;
+      height: 27px;
+      margin-left: 550px;
+    }
+    &__btn {
+      height: 30px;
+      width: 100px;
+    }
+  }
+
+  .main {
+    grid-template-columns: 900px 300px;
+    gap: 80px;
+  }
+
+  .characters-div {
+    margin-left: 150px;
+  }
+
+  .item {
+    width: 100px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+  .character {
+    gap: 5px;
+
+    &__image {
+      width: 100px;
+      height: 125px;
+    }
+    &__name {
+      font-size: 14px;
+    }
+    &__dead {
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+  }
+
+
+.title-fav {
+  font-size: 30px;
+}
+
+.resetbtn {
+  font-size: 12px;
+  height: 3px;
+  height: 23px;
+  width: 60px;
+  margin-top: 25px;
+  margin-left: 18px;
+}
+};

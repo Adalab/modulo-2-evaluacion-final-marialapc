@@ -118,14 +118,14 @@ function favouriteCharacters() {
   }
 }
 
-
 //Events
 
 searchBtn.addEventListener("click", handleClickbtn); // click on search button
 
-resetBtn.addEventListener("click",(ev) =>{ //click on reset button
+resetBtn.addEventListener("click", (ev) => {
+  //click on reset button
   ev.preventDefault();
   console.log("reset click");
-listFavCharacters.innerHTML = '';
-favClass = "";
+  listFavCharacters.innerHTML = "";
+  localStorage.clear();
 });

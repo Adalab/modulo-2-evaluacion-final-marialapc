@@ -13,6 +13,8 @@ let favourites = [];
 const listFavCharacters = document.querySelector(".js-favourite-characters");
 
 const resetBtn = document.querySelector(".js-reset-btn");
+const logBtn = document.querySelector(".js-log-btn");
+
 
 //functions
 
@@ -34,6 +36,7 @@ function renderCharacters(charactersList) {//paint the characters from the Api, 
     html += `<img class="character__image"src="${oneCharacter.img}">`;
     html += `<h2 class="character__name">${oneCharacter.name}</h2>`;
     html += `<p class="character__dead">${oneCharacter.status}</p>`;
+    html += `<p class="character__category"> ${oneCharacter.category}</p>`;
     html += `</article> </li>`;
   }
   listCharacters.innerHTML = html;
@@ -52,8 +55,7 @@ function renderFavCharacters(favourites) { //paint the favorite characters
   listFavCharacters.innerHTML = html;
 }
 
-function getData() {
-  // get data from the Api
+function getData() {  // get data from the Api
   fetch("https://breakingbadapi.com/api/characters")
     .then((response) => response.json())
     .then((data) => {
@@ -73,8 +75,7 @@ function getData() {
 
 getData();
 
-function handleClickbtn(event) {
-  //filter for searching a character
+function handleClickbtn(event) { //filter for searching a character
   event.preventDefault();
   const searchValue = searchBar.value.toLowerCase();
 
@@ -84,8 +85,7 @@ function handleClickbtn(event) {
   renderCharacters(characterFilter);
 }
 
-function handleClickfav(event) {
-  // make the clicked character a favortite character and add it to the array, paint or delete from the section
+function handleClickfav(event) { // make the clicked character a favortite character and add it to the array, paint or delete from the section
   event.currentTarget.classList.toggle("fav");
   const selectedCharacter = parseInt(event.currentTarget.id);
   const foundCharacter = characters.find(function (character) {
@@ -108,8 +108,7 @@ function handleClickfav(event) {
   console.log(favourites);
 }
 
-function favouriteCharacters() {
-  //click on a character
+function favouriteCharacters() { //click on a character
   const charactersLi = document.querySelectorAll(".js-character");
   for (const li of charactersLi) {
     li.addEventListener("click", handleClickfav);
@@ -127,4 +126,12 @@ resetBtn.addEventListener("click", (ev) => {
   localStorage.clear();
   favourites.length = 0;
   renderCharacters(characters);
+});
+
+logBtn.addEventListener("click",(evento) =>{
+  event.preventDefault();
+for ( const oneCharacter of characters){
+  console.log(oneCharacter.name)
+}
+
 });
